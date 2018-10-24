@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Record this blog!"
+date:   2018-10-24 11:58:21 +0800
+tags: longxiaowei update
+color: rgb(255,90,90)
+cover: '../assets/test.png'
+subtitle: 'Welcome to Jekyll!'
+---
+# 我该去吃饭了
+[jekyll-docs]: https://www.baidu.com
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
