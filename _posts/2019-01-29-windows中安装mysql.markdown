@@ -58,7 +58,9 @@ subtitle: 'windows中安装mysql-8.0.14步骤记录'
 		</pre>
 
 	- 以管理员的身份打开cmd窗口 初始化服务：
+
 	mysqld --initialize --user=mysql --console
+	
 	初始化完成之后，会生成一个临时密码,将此密码复制保存
 
 	<img src="/assets/imgages/2019/01290005.png">
