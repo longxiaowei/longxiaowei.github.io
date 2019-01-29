@@ -13,7 +13,7 @@ subtitle: 'windows中安装mysql-8.0.14步骤记录'
 
 - 解压并进入安装目录 
 	
-	<img src="/assets/blogimg/2018-10-24.png">
+	<img src="/assets/blogimg/2018-10-21.png">
 
 - 配置path环境变量
 
