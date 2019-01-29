@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Record this blog!"
-date:   2018-10-24
-tags: longxiaowei update
+title:  "windows中安装mysql-8.0.14步骤记录"
+date:   2019-01-29
+tags: longxiaowei
 color: rgb(255,90,90)
 cover: '../assets/blogimg/2018-10-24.png'
 subtitle: ''
