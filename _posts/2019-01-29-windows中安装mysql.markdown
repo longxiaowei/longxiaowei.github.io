@@ -5,9 +5,8 @@ date:   2019-01-29
 tags: database
 color: rgb(255,90,90)
 cover: '../assets/blogimg/2018-10-24.png'
-subtitle: ''
 ---
-# windows中安装mysql-8.0.14步骤记录
+### windows中安装mysql-8.0.14步骤记录
 
 - 下载mysql 安装包
 
