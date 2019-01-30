@@ -1110,3 +1110,7 @@ a{
 #media{
   display: none;
 }
+
+.fontcolor{
+  color:black !important;
+}
