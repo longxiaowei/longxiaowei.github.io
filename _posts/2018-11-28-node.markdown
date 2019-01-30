@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Linux性能监控"
+title:  "node中使用redis注意事项"
 date:   2018-10-24
-tags: longxiaowei update
+tags: node
 color: rgb(255,90,90)
 cover: '../assets/blogimg/2018-10-24.png'
 subtitle: ''
