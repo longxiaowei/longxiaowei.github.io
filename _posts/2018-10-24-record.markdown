@@ -5,13 +5,11 @@ date:   2018-10-24
 tags: longxiaowei
 color: rgb(255,90,90)
 cover: '../assets/blogimg/2018-10-24.png'
-subtitle: ''
+subtitle: 'record any thing'
 ---
 # DailyRocord
 - date:2018-03-05 name:github
 - date:2018-03-06 name:拉钩
 
 
-[jekyll-docs]: https://www.baidu.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[docs]: https://longxiaowei.github.io/
