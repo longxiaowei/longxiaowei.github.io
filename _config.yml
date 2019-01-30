@@ -11,6 +11,7 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
   时间线: '/timeline.html'
   关于博主: '/about.html'
   友情链接: '/friendLink.html'
+  博主收藏: '/collection.html'
 
 # 博主
 author: true
@@ -60,6 +61,13 @@ pygmentsTheme: 'default'
 # 友情链接
 friends:
   jekyll: 'https://www.jekyll.com.cn/'
+
+# 收藏
+collections:
+  MNIST: 'http://www.tensorfly.cn/tfdoc/tutorials/mnist_pros.html'
+  Elasticsearch: 'https://github.com/elastic/elasticsearch?utm_source=gold_browser_extension'
+  nacos: 'https://github.com/alibaba/nacos'
+  LeeCode: 'https://leetcode.com/problemset/all/'
 
 # 评论 最佳体验 在disqus、livere和Gitment之间三选一
 # disqus 评论
