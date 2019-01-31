@@ -3,7 +3,7 @@ layout: post
 title:  "Record this blog!"
 date:   2018-10-24
 tags: longxiaowei
-color: white
+color: rgb(230,230,250)
 cover: '../assets/blogimg/2018-10-24.png'
 subtitle: 'record any thing'
 ---
