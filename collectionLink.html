@@ -1,0 +1,24 @@
+---
+layout: default
+title: 友情链接
+page-title: collections
+home-title: This is my friends.
+description:
+---
+
+{% include header.html %}
+{% include boot.html %}
+<main>
+    {% include title.html %}
+    <ul class="ex-list">
+        <li  class="fadeInUp animated">
+          {% for c in site.collection %}
+            <span class="tag-name" >
+                <a href="{{ c[1] }}">「&emsp;{{ c[0] }}&emsp;」</a>
+            </span>
+                </br>
+          {% endfor %}
+        </li>
+    </ul>
+</main>
+{% include footer.html %}
