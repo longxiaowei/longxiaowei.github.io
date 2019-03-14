@@ -10,6 +10,7 @@ subtitle: 'record any thing'
 # DailyRocord
 - date:2018-03-05 name:github
 - date:2018-03-06 name:拉钩
+- Tenda:cyy1-7
 
 
 [docs]: https://longxiaowei.github.io/

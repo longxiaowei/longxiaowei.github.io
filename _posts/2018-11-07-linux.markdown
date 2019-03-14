@@ -3,9 +3,11 @@ layout: post
 title:  "Linux性能监控"
 date:   2018-11-07
 tags: Linux
-color: rgb(255,90,90)
+color: rgb(230,230,250)
 cover: '../assets/blogimg/2018-10-24.png'
 ---
 ### iostat
+
+ - iostat命令详解
 
 [docs]: https://longxiaowei.github.io/

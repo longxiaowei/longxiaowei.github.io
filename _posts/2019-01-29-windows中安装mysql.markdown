@@ -3,7 +3,7 @@ layout: post
 title:  "windows中安装mysql-8.0.14"
 date:   2019-01-29
 tags: database
-color: rgb(255,90,90)
+color: rgb(230,230,250)
 cover: '../assets/blogimg/2018-10-24.png'
 ---
 ### windows中安装mysql-8.0.14步骤记录
