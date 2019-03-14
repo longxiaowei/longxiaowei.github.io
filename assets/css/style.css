@@ -101,7 +101,7 @@ a{
 }
 
 .top{
-    height: 440px;
+    height: 340px;
     max-width: 1280px;
     margin: -20px auto;
     background-image: url(/assets/lineart.png);
@@ -709,8 +709,8 @@ a{
     right: 0;
     margin: 0 auto;
     font-size: 45px;
-    font-weight: 550;
-    color: white;
+    font-weight: 450;
+    color: black;
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     /*font-family: 'Kaushan Script', cursive;*/
 }
