@@ -453,191 +453,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://longxiaowei.github.io/2019/01/29/mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="longxiaowei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Longxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/29/mysql/" itemprop="url">windows中安装mysql-8.0.14</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-29T00:00:00+08:00">
-                2019-01-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/database/" itemprop="url" rel="index">
-                    <span itemprop="name">database</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="windows-中安装-mysql-8-0-14-步骤记录"><a href="#windows-中安装-mysql-8-0-14-步骤记录" class="headerlink" title="windows 中安装 mysql-8.0.14 步骤记录"></a>windows 中安装 mysql-8.0.14 步骤记录</h1><h2 id="下载mysql-安装包"><a href="#下载mysql-安装包" class="headerlink" title="下载mysql 安装包"></a>下载mysql 安装包</h2><p><img src="/images/mysql/1.png" alt=""></p>
-<h2 id="解压并进入安装目录"><a href="#解压并进入安装目录" class="headerlink" title="解压并进入安装目录"></a>解压并进入安装目录</h2><pre><code>&lt;img src=&quot;/assets/imgages/2019/01290002.png&quot;&gt;</code></pre><h2 id="配置path环境变量"><a href="#配置path环境变量" class="headerlink" title="配置path环境变量"></a>配置path环境变量</h2><pre><code>MYSQL_HOME：mysql安装路径
-&lt;img src=&quot;/assets/imgages/2019/01290003.png&quot;&gt;
-PATH:%MYSQL_HOME%\bin
-&lt;img src=&quot;/assets/imgages/2019/01290004.png&quot;&gt;</code></pre><h2 id="初始化服务信息"><a href="#初始化服务信息" class="headerlink" title="初始化服务信息"></a>初始化服务信息</h2><pre><code>- 在mysql安装目录下 即bin文件夹同级 新建 data文件夹和my.ini文件,my.ini内容如下，用window记事本打开保存，ANSI编码。
-
-    &lt;pre&gt;
-    [mysqld]
-    # 设置3306端口
-    port=3306
-
-    # 设置mysql的安装目录
-    basedir=D:/mysql-8.0.14
-
-    # 设置mysql数据库的数据的存放目录
-    datadir=D:/mysql-8.0.14/data
-    # 允许最大连接数
-
-    max_connections=200
-    # 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
-    max_connect_errors=10
-    # 服务端使用的字符集默认为UTF8
-    character-set-server=utf8
-    # 创建新表时将使用的默认存储引擎
-    default-storage-engine=INNODB
-    [mysql]
-    # 设置mysql客户端默认字符集
-    default-character-set=utf8mb4
-    [client]
-    # 设置mysql客户端连接服务端时默认使用的端口
-    port=3306
-    default-character-set=utf8
-    &lt;/pre&gt;
-
-- 以管理员的身份打开cmd窗口 初始化服务：
-
-mysqld --initialize --user=mysql --console
-
-初始化完成之后，会生成一个临时密码,将此密码复制保存
-
-&lt;img src=&quot;/assets/imgages/2019/01290005.png&quot;&gt;</code></pre><h2 id="安装服务"><a href="#安装服务" class="headerlink" title="安装服务"></a>安装服务</h2><pre><code>mysqld -install</code></pre><h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><pre><code>net start mysql
-
-&lt;img src=&quot;/assets/imgages/2019/01290006.png&quot;&gt;</code></pre><h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><pre><code>mysql -u root -p登录数据库 输入上面的临时密码
-
-ALTER USER root@localhost IDENTIFIED  BY &apos;123456&apos;; 将密码为123456</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://longxiaowei.github.io/2019/01/29/%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E5%AF%BC%E5%87%BApdm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -739,6 +554,191 @@ ALTER USER root@localhost IDENTIFIED  BY &apos;123456&apos;; 将密码为123456<
 <p><img src="/images/pdm/1.png" alt=""></p>
 <p>设置模型名称，点击确定。选择</p>
 <h2 id="配置path环境变量"><a href="#配置path环境变量" class="headerlink" title="配置path环境变量"></a>配置path环境变量</h2><pre><code>MYSQL_HOME：mysql安装路径
+&lt;img src=&quot;/assets/imgages/2019/01290003.png&quot;&gt;
+PATH:%MYSQL_HOME%\bin
+&lt;img src=&quot;/assets/imgages/2019/01290004.png&quot;&gt;</code></pre><h2 id="初始化服务信息"><a href="#初始化服务信息" class="headerlink" title="初始化服务信息"></a>初始化服务信息</h2><pre><code>- 在mysql安装目录下 即bin文件夹同级 新建 data文件夹和my.ini文件,my.ini内容如下，用window记事本打开保存，ANSI编码。
+
+    &lt;pre&gt;
+    [mysqld]
+    # 设置3306端口
+    port=3306
+
+    # 设置mysql的安装目录
+    basedir=D:/mysql-8.0.14
+
+    # 设置mysql数据库的数据的存放目录
+    datadir=D:/mysql-8.0.14/data
+    # 允许最大连接数
+
+    max_connections=200
+    # 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
+    max_connect_errors=10
+    # 服务端使用的字符集默认为UTF8
+    character-set-server=utf8
+    # 创建新表时将使用的默认存储引擎
+    default-storage-engine=INNODB
+    [mysql]
+    # 设置mysql客户端默认字符集
+    default-character-set=utf8mb4
+    [client]
+    # 设置mysql客户端连接服务端时默认使用的端口
+    port=3306
+    default-character-set=utf8
+    &lt;/pre&gt;
+
+- 以管理员的身份打开cmd窗口 初始化服务：
+
+mysqld --initialize --user=mysql --console
+
+初始化完成之后，会生成一个临时密码,将此密码复制保存
+
+&lt;img src=&quot;/assets/imgages/2019/01290005.png&quot;&gt;</code></pre><h2 id="安装服务"><a href="#安装服务" class="headerlink" title="安装服务"></a>安装服务</h2><pre><code>mysqld -install</code></pre><h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><pre><code>net start mysql
+
+&lt;img src=&quot;/assets/imgages/2019/01290006.png&quot;&gt;</code></pre><h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><pre><code>mysql -u root -p登录数据库 输入上面的临时密码
+
+ALTER USER root@localhost IDENTIFIED  BY &apos;123456&apos;; 将密码为123456</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://longxiaowei.github.io/2019/01/29/mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="longxiaowei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Longxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/29/mysql/" itemprop="url">windows中安装mysql-8.0.14</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-29T00:00:00+08:00">
+                2019-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="windows-中安装-mysql-8-0-14-步骤记录"><a href="#windows-中安装-mysql-8-0-14-步骤记录" class="headerlink" title="windows 中安装 mysql-8.0.14 步骤记录"></a>windows 中安装 mysql-8.0.14 步骤记录</h1><h2 id="下载mysql-安装包"><a href="#下载mysql-安装包" class="headerlink" title="下载mysql 安装包"></a>下载mysql 安装包</h2><p><img src="/images/mysql/1.png" alt=""></p>
+<h2 id="解压并进入安装目录"><a href="#解压并进入安装目录" class="headerlink" title="解压并进入安装目录"></a>解压并进入安装目录</h2><pre><code>&lt;img src=&quot;/assets/imgages/2019/01290002.png&quot;&gt;</code></pre><h2 id="配置path环境变量"><a href="#配置path环境变量" class="headerlink" title="配置path环境变量"></a>配置path环境变量</h2><pre><code>MYSQL_HOME：mysql安装路径
 &lt;img src=&quot;/assets/imgages/2019/01290003.png&quot;&gt;
 PATH:%MYSQL_HOME%\bin
 &lt;img src=&quot;/assets/imgages/2019/01290004.png&quot;&gt;</code></pre><h2 id="初始化服务信息"><a href="#初始化服务信息" class="headerlink" title="初始化服务信息"></a>初始化服务信息</h2><pre><code>- 在mysql安装目录下 即bin文件夹同级 新建 data文件夹和my.ini文件,my.ini内容如下，用window记事本打开保存，ANSI编码。

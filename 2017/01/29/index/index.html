@@ -345,8 +345,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/29/%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E5%AF%BC%E5%87%BApdm/" rel="prev" title="从数据库中生成pdm">
-                从数据库中生成pdm <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/29/mysql/" rel="prev" title="windows中安装mysql-8.0.14">
+                windows中安装mysql-8.0.14 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -376,6 +376,8 @@
 
           
 
+  
+  <div id="gitalk-container"></div>
   
 
 
@@ -637,6 +639,22 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '5431b0eabc608f2fe7e9',
+      clientSecret: '064ebe3895d7759300adf5dbb806c2fe80426547',
+      repo: 'blog-talk',
+      owner: 'longxiaowei',
+      admin: ['longxiaowei'],
+      id: location.pathname,
+      distractionFreeMode: 'false'
+    })
+    gitalk.render('gitalk-container')
+  </script>
 
 
   
