@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="redis,nosql," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,15 +79,11 @@
 
 
 
-<meta name="description" content="Redis 简介环境搭建数据结构   redis 中支持 5 中基础的数据结构。分别为 String Hash List Set Sort Set 持久化淘汰策略">
-<meta name="keywords" content="redis,nosql">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Redis 知识汇总">
-<meta property="og:url" content="https:&#x2F;&#x2F;longxiaowei.github.io&#x2F;2020&#x2F;04&#x2F;09&#x2F;redis&#x2F;index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Longxw">
+<meta property="og:url" content="https:&#x2F;&#x2F;longxiaowei.github.io&#x2F;tags&#x2F;pdm&#x2F;index.html">
 <meta property="og:site_name" content="Longxw">
-<meta property="og:description" content="Redis 简介环境搭建数据结构   redis 中支持 5 中基础的数据结构。分别为 String Hash List Set Sort Set 持久化淘汰策略">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-20T03:02:55.307Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="https://longxiaowei.github.io/2020/04/09/redis/"/>
+  <link rel="canonical" href="https://longxiaowei.github.io/tags/pdm/"/>
 
 
 
 
 
-  <title>Redis 知识汇总 | Longxw</title>
+  <title>Tag: pdm | Longxw</title>
   
 
 
@@ -143,7 +139,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,175 +233,54 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>pdm<small>Tag</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://longxiaowei.github.io/2020/04/09/redis/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="longxiaowei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Longxw">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2019/01/29/pdm/" itemprop="url">
+              
+                <span itemprop="name">从数据库中生成pdm</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">Redis 知识汇总</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-09T00:00:00+08:00">
-                2020-04-09
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2019-01-29T00:00:00+08:00"
+              content="2019-01-29" >
+          01-29
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index">
-                    <span itemprop="name">redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="Redis-简介"><a href="#Redis-简介" class="headerlink" title="Redis 简介"></a>Redis 简介</h1><h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>   redis 中支持 5 中基础的数据结构。分别为 <code>String</code> <code>Hash</code> <code>List</code> <code>Set</code> <code>Sort Set</code></p>
-<h1 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h1><h1 id="淘汰策略"><a href="#淘汰策略" class="headerlink" title="淘汰策略"></a>淘汰策略</h1>
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/redis/" rel="tag"># redis</a>
-          
-            <a href="/tags/nosql/" rel="tag"># nosql</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/03/16/FastDFS/" rel="next" title="FastDFS 入门">
-                <i class="fa fa-chevron-left"></i> FastDFS 入门
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/20/ThreadPoolExecutor/" rel="prev" title="线程池(ThreadPoolExecutor)">
-                线程池(ThreadPoolExecutor) <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -413,12 +288,6 @@
 
 
           
-
-  
-  <div id="gitalk-container"></div>
-  
-
-
 
         </div>
         
@@ -439,17 +308,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,22 +369,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-简介"><span class="nav-number">1.</span> <span class="nav-text">Redis 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">3.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#持久化"><span class="nav-number">4.</span> <span class="nav-text">持久化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#淘汰策略"><span class="nav-number">5.</span> <span class="nav-text">淘汰策略</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -658,10 +502,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
@@ -702,22 +542,6 @@
 
 
 
-
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <div id="gitalk-container"></div>
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: '5431b0eabc608f2fe7e9',
-      clientSecret: '064ebe3895d7759300adf5dbb806c2fe80426547',
-      repo: 'blog-talk',
-      owner: 'longxiaowei',
-      admin: ['longxiaowei'],
-      id: location.pathname,
-      distractionFreeMode: 'false'
-    })
-    gitalk.render('gitalk-container')
-  </script>
 
 
   
