@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="redis,nosql," />
+  <meta name="keywords" content="java并发,java,j.u.c," />
 
 
 
@@ -79,16 +79,19 @@
 
 
 
-<meta name="description" content="Redis 简介环境搭建数据结构   redis 中支持 5 中基础的数据结构。分别为 String Hash List Set Sort Set 持久化淘汰策略">
-<meta name="keywords" content="redis,nosql">
+<meta name="description" content="volatile 简介  volitile 是 java 种的一个关键字，volatile主要两个作用  保证线程可见性 禁止指令重排序  线程可见性  线程可见性是指多个线程访问同一变量的时候，某一个线程修改了该变量的值，其他线程能够立即看到修改后的值。测试代码：  不使用 volatile 修饰  1234567891011121314  public class VolatileDemo &amp;">
+<meta name="keywords" content="java并发,java,j.u.c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis 知识汇总">
-<meta property="og:url" content="https:&#x2F;&#x2F;longxiaowei.github.io&#x2F;2020&#x2F;04&#x2F;09&#x2F;redis&#x2F;index.html">
+<meta property="og:title" content="volatile 详解">
+<meta property="og:url" content="https:&#x2F;&#x2F;longxiaowei.github.io&#x2F;2020&#x2F;05&#x2F;15&#x2F;volatile&#x2F;index.html">
 <meta property="og:site_name" content="Longxw">
-<meta property="og:description" content="Redis 简介环境搭建数据结构   redis 中支持 5 中基础的数据结构。分别为 String Hash List Set Sort Set 持久化淘汰策略">
+<meta property="og:description" content="volatile 简介  volitile 是 java 种的一个关键字，volatile主要两个作用  保证线程可见性 禁止指令重排序  线程可见性  线程可见性是指多个线程访问同一变量的时候，某一个线程修改了该变量的值，其他线程能够立即看到修改后的值。测试代码：  不使用 volatile 修饰  1234567891011121314  public class VolatileDemo &amp;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-20T03:02:55.307Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;longxiaowei.github.io&#x2F;images&#x2F;volatile&#x2F;no-volatile-demo-running-result.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;longxiaowei.github.io&#x2F;images&#x2F;volatile&#x2F;volatile-demo-running-result.jpg">
+<meta property="og:updated_time" content="2020-05-15T05:59:13.030Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;longxiaowei.github.io&#x2F;images&#x2F;volatile&#x2F;no-volatile-demo-running-result.jpg">
 
 
 
@@ -118,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://longxiaowei.github.io/2020/04/09/redis/"/>
+  <link rel="canonical" href="https://longxiaowei.github.io/2020/05/15/volatile/"/>
 
 
 
 
 
-  <title>Redis 知识汇总 | Longxw</title>
+  <title>volatile 详解 | Longxw</title>
   
 
 
@@ -251,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://longxiaowei.github.io/2020/04/09/redis/">
+    <link itemprop="mainEntityOfPage" href="https://longxiaowei.github.io/2020/05/15/volatile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="longxiaowei">
@@ -268,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Redis 知识汇总</h1>
+          <h1 class="post-title" itemprop="name headline">volatile 详解</h1>
         
 
         <div class="post-meta">
@@ -280,8 +283,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-09T00:00:00+08:00">
-                2020-04-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-15T00:00:00+08:00">
+                2020-05-15
               </time>
             
 
@@ -303,8 +306,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index">
-                    <span itemprop="name">redis</span>
+                  <a href="/categories/j-u-c/" itemprop="url" rel="index">
+                    <span itemprop="name">j.u.c</span>
                   </a>
                 </span>
 
@@ -340,8 +343,27 @@
       
 
       
-        <h1 id="Redis-简介"><a href="#Redis-简介" class="headerlink" title="Redis 简介"></a>Redis 简介</h1><h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>   redis 中支持 5 中基础的数据结构。分别为 <code>String</code> <code>Hash</code> <code>List</code> <code>Set</code> <code>Sort Set</code></p>
-<h1 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h1><h1 id="淘汰策略"><a href="#淘汰策略" class="headerlink" title="淘汰策略"></a>淘汰策略</h1>
+        <h1 id="volatile-简介"><a href="#volatile-简介" class="headerlink" title="volatile 简介"></a>volatile 简介</h1><p>  volitile 是 java 种的一个关键字，volatile主要两个作用</p>
+<ul>
+<li>保证线程可见性</li>
+<li>禁止指令重排序</li>
+</ul>
+<h1 id="线程可见性"><a href="#线程可见性" class="headerlink" title="线程可见性"></a>线程可见性</h1><p>  线程可见性是指多个线程访问同一变量的时候，某一个线程修改了该变量的值，其他线程能够立即看到修改后的值。测试代码：</p>
+<ul>
+<li>不使用 volatile 修饰</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  public class VolatileDemo &#123;</span><br><span class="line"></span><br><span class="line">    private static boolean running = true;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        new Thread(() -&gt; &#123;</span><br><span class="line">            while(running)&#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line"></span><br><span class="line">        Thread.sleep(4000);</span><br><span class="line">        running = false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="/images/volatile/no-volatile-demo-running-result.jpg" alt=""></p>
+<ul>
+<li>使用 volatile 修饰</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class VolatileDemo &#123;</span><br><span class="line"></span><br><span class="line">    private static volatile boolean running = true;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        new Thread(() -&gt; &#123;</span><br><span class="line">            while(running)&#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line"></span><br><span class="line">        Thread.sleep(4000);</span><br><span class="line">        running = false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="/images/volatile/volatile-demo-running-result.jpg" alt=""></p>
+<p>不使用 volatile 修饰程序执行结果：线程未结束。说明 while 条件一直成立，即线程读取到的 running值为true。<br>使用 volatile 修饰，程序线程可以正常退出。说明while条件读到的running值为false。<br>结论：被validate修饰的变量，可以保持线程可见性。</p>
+<h1 id="指令重排序"><a href="#指令重排序" class="headerlink" title="指令重排序"></a>指令重排序</h1><p>CPU为了优化指令执行效率，会对需要执行的指令进行重排序。</p>
+
       
     </div>
     
@@ -358,9 +380,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/redis/" rel="tag"># redis</a>
+            <a href="/tags/java%E5%B9%B6%E5%8F%91/" rel="tag"># java并发</a>
           
-            <a href="/tags/nosql/" rel="tag"># nosql</a>
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/j-u-c/" rel="tag"># j.u.c</a>
           
         </div>
       
@@ -373,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/16/FastDFS/" rel="next" title="FastDFS 入门">
-                <i class="fa fa-chevron-left"></i> FastDFS 入门
+              <a href="/2020/04/20/ThreadPoolExecutor/" rel="next" title="线程池(ThreadPoolExecutor)">
+                <i class="fa fa-chevron-left"></i> 线程池(ThreadPoolExecutor)
               </a>
             
           </div>
@@ -382,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/20/java-note/" rel="prev" title="java 面试复习资料">
-                java 面试复习资料 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-简介"><span class="nav-number">1.</span> <span class="nav-text">Redis 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">3.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#持久化"><span class="nav-number">4.</span> <span class="nav-text">持久化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#淘汰策略"><span class="nav-number">5.</span> <span class="nav-text">淘汰策略</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile-简介"><span class="nav-number">1.</span> <span class="nav-text">volatile 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程可见性"><span class="nav-number">2.</span> <span class="nav-text">线程可见性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令重排序"><span class="nav-number">3.</span> <span class="nav-text">指令重排序</span></a></li></ol></div>
             
 
           </div>
